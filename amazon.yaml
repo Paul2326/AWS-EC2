@@ -1,0 +1,30 @@
+metadata:
+  name: demo-dev
+  region: eu-central-1
+  version: "1.27"
+
+vpc:
+  id: "vpc-00a76051c7233c240"
+  subnets:
+    public:
+      eu-central-1a:
+        id: "subnet-09954f2821a00a1bf"
+        cidr: "172.31.16.0/20"
+      eu-central-1b:
+        id: "subnet-0b6257f6e6a914e44"
+        cidr: "172.31.32.0/20"
+    private:
+      eu-central-1a:
+        id: "subnet-094024f53dd99a01f"
+        cidr: "172.31.240.0/20"
+      eu-central-1b:
+        id: "subnet-08862dd34123ca9fd"
+        cidr: "172.31.144.0/20"
+
+nodeGroups:
+  - name: general
+    instanceType: t2.micro
+    desiredCapacity: 3
+    labels:
+      role: general
+    privateNetworking: true
